@@ -32,11 +32,9 @@
                 {{ $slot }}
             </main>
         </div>
+        <script src="{{ mix('js/app.js') }}"></script>
+          <!-- Scripts -->
+          <script src="{{ asset('js/funciones.js') }}" defer></script>
+          @yield('javaScript')
     </body>
-    <script src="{{ mix('js/app.js') }}"></script>
-    <script>
-        $(function(){
-            console.log("hola mundo");
-        })
-    </script>
 </html>
