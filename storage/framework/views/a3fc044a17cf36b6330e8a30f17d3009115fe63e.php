@@ -15,83 +15,45 @@
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 bg-white border-b border-gray-200">
-                    <div class="row mb-2">
-                        <div class="col text-center">
-                            <button  type="button" class="btn btn-outline-primary" id="usuarios">
-                                Usuarios
-                            </button>
-                            <button  type="button" class="btn btn-outline-primary"  id="equipos">
-                                Equipos
-                            </button>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col text-center">
+                    <div class="d-flex justify-content-evenly">
+                        <div class="col-auto text-center">
                             <?php if(session('usuarios_mensaje')): ?>
                                 <div class="<?php echo e(session('usuarios_clase')); ?>">
                                     <?php echo e(session('usuarios_mensaje')); ?>
 
                                 </div>
                             <?php endif; ?>
-                            <h4> Tabla de usuarios </h4>
+                            <div class="d-flex justify-content-evenly">
+                                 <span class="align-middle text-capitalize fs-3 fw-bolder"> tabla de clientes </span>
+                                <button  type="button" class="btn btn-outline-primary" id="usuarios">
+                                    Clientes
+                                </button>
+                            </div>
+
                             <?php echo $__env->make('usuarios.tabla', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
                         </div>
-                        <div class="col text-center">
-                            <?php if(session('equipos_mensaje')): ?>
+                        <div class="col-auto text-center">
+                            <?php if(session('equipos_mensaje') ): ?>
                                 <div class="<?php echo e(session('equipos_clase')); ?>">
                                     <?php echo e(session('equipos_mensaje')); ?>
 
                                 </div>
                             <?php endif; ?>
-                            <h4> Tabla de equipo </h4>
+                            <div class="d-flex justify-content-center ">
+                                <span class="align-middle text-capitalize fs-3 fw-bolder">tabla de equipos</span>
+                                <button  type="button" class="btn btn-outline-primary ml-2"  id="equipos">
+                                    Equipos
+                                </button>
+                            </div>
+
                             <?php echo $__env->make('equipos.tabla', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
                         </div>
                     </div>
-
-
-
-
-
-
                 </div>
             </div>
         </div>
     </div>
     <?php echo $__env->make('modal.modal', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
-    <?php $__env->startSection('javaScript'); ?>
-<script type="text/javascript">
-    $(function(){
-        $( "#usuarios" ).on( "click", function() {
-            $.get('/usuarios/create',function(data){
-                $('#mostrar').modal('show');
-                modal("<?php echo e(route('usuarios.store')); ?>",'POST','Crear Usuario',data,'Guardar Usuario');
-            });
-        });
-        $( "#equipos" ).on( "click", function() {
-            $.get('/equipos/create',function(data){
-		        $('#mostrar').modal('show');
-                modal("<?php echo e(route('equipos.store')); ?>",'POST','Crear Equipo',data,'Guardar Equipo');
-            });
-        });
-
-        $( "[name=editarUsuario]" ).on( "click", function() {
-            let id= $(this).val();
-            $.get('usuarios/'+id+'/edit' ,function(data){
-		        $('#mostrar').modal('show');
-                modal('usuarios/'+id,'POST','Actualizar Usuario',data,'Actualizar Usuario');
-            });
-        });
-        $( "[name=editarEquipo]" ).on( "click", function() {
-            let id= $(this).val();
-            $.get('equipos/'+id+'/edit' ,function(data){
-		        $('#mostrar').modal('show');
-                modal('equipos/'+id,'POST','Actualizar Equipo',data,'Actualizar Equipo');
-            });
-        });
-})
-
-</script>
-<?php $__env->stopSection(); ?>
  <?php echo $__env->renderComponent(); ?>
 <?php endif; ?>
 <?php if (isset($__componentOriginal8e2ce59650f81721f93fef32250174d77c3531da)): ?>

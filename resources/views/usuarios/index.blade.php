@@ -12,7 +12,7 @@
                     <div class="row mb-2">
                         <div class="col text-center">
                             <button  type="button" class="btn btn-outline-primary" id="usuarios">
-                                Usuarios
+                                Clientes
                             </button>
                         </div>
                     </div>
@@ -23,7 +23,7 @@
                                     {{ session('usuarios_mensaje') }}
                                 </div>
                             @endif
-                            <h4> Tabla de usuarios </h4>
+                            <h4> Tabla de Clientes </h4>
                             @include('usuarios.tabla')
                             {{ $usuarios->links() }}
                         </div>
@@ -33,23 +33,4 @@
         </div>
     </div>
     @include('modal.modal')
-    @section('javaScript')
-<script type="text/javascript">
-    $(function(){
-        $( "#usuarios" ).on( "click", function() {
-            $.get('/usuarios/create',function(data){
-                $('#mostrar').modal('show');
-                modal("{{route('usuarios.store')}}",'POST','Crear Usuario',data,'Guardar Usuario');
-            });
-        });
-        $( "[name=editarUsuario]" ).on( "click", function() {
-            let id= $(this).val();
-            $.get('usuarios/'+id+'/edit' ,function(data){
-		        $('#mostrar').modal('show');
-                modal('usuarios/'+id,'POST','Actualizar Usuario',data,'Actualizar Usuario');
-            });
-        });
-})
-</script>
-@endsection
 </x-app-layout>

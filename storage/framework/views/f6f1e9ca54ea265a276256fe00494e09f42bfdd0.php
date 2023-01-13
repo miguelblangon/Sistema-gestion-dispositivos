@@ -39,26 +39,6 @@
         </div>
     </div>
     <?php echo $__env->make('modal.modal', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
-    <?php $__env->startSection('javaScript'); ?>
-<script type="text/javascript">
-    $(function(){
-        $( "#equipos" ).on( "click", function() {
-            $.get('/equipos/create',function(data){
-		        $('#mostrar').modal('show');
-                modal("<?php echo e(route('equipos.store')); ?>",'POST','Crear Equipo',data,'Guardar Equipo');
-            });
-        });
-        $( "[name=editarEquipo]" ).on( "click", function() {
-            let id= $(this).val();
-            $.get('equipos/'+id+'/edit' ,function(data){
-		        $('#mostrar').modal('show');
-                modal('equipos/'+id,'POST','Actualizar Equipo',data,'Actualizar Equipo');
-            });
-        });
-})
-
-</script>
-<?php $__env->stopSection(); ?>
  <?php echo $__env->renderComponent(); ?>
 <?php endif; ?>
 <?php if (isset($__componentOriginal8e2ce59650f81721f93fef32250174d77c3531da)): ?>

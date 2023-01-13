@@ -14,7 +14,7 @@ class UsuarioController extends Controller
      */
     public function index()
     {
-        $usuarios= \App\Models\Usuario::simplePaginate(10);
+        $usuarios= \App\Models\Usuario::orderBy('id', 'DESC')->simplePaginate(10);
         return view('usuarios.index', compact('usuarios') );
     }
 

@@ -16,7 +16,7 @@ class EquipoController extends Controller
      */
     public function index()
     {
-        $equipos= \App\Models\Equipo::simplePaginate(10);
+        $equipos= \App\Models\Equipo::orderBy('id', 'DESC')->simplePaginate(10);
         return view('equipos.index', compact('equipos') );
     }
 
@@ -44,7 +44,7 @@ class EquipoController extends Controller
             $equipo=Equipo::create($request->all());
             return back()->with(['equipos_mensaje'=>'Equipo Creado Correctamente','equipos_clase'=>'alert alert-success']);
         } catch (\Exception $e) {
-            back()->with(['equipos_mensaje'=>'Error el equipo no se pudo Crear','equipos_clase'=>'alert alert-danger']);
+           return back()->with(['equipos_mensaje'=>'Error el equipo no se pudo Crear','equipos_clase'=>'alert alert-danger']);
         }
     }
 
@@ -77,14 +77,8 @@ class EquipoController extends Controller
             return view('equipos.crear')->with(['envioEspecial'=>'PUT', 'equipo'=>$equipo,'usuarios'=>$usuarios,'rutaQr'=> $rutaQr ]);
 
         } catch (\Exception $e) {
-            back()->with(['equipos_mensaje'=>'Error el equipo no se pudo mostrar','equipos_clase'=>'alert alert-danger']);
+          return  back()->with(['equipos_mensaje'=>'Error el equipo no se pudo mostrar','equipos_clase'=>'alert alert-danger']);
         }
-
-
-
-
-
-
     }
 
     /**
@@ -100,7 +94,7 @@ class EquipoController extends Controller
             $equipo->update($request->all());
             return back()->with(['equipos_mensaje'=>'Equipo Actualizado Correctamente','equipos_clase'=>'alert alert-success']);
         } catch (\Exception $e) {
-            back()->with(['equipos_mensaje'=>'Error el equipo no se pudo Actualizar','equipos_clase'=>'alert alert-danger']);
+           return back()->with(['equipos_mensaje'=>'Error el equipo no se pudo Actualizar','equipos_clase'=>'alert alert-danger']);
         }
     }
 
@@ -116,14 +110,13 @@ class EquipoController extends Controller
             $equipo->delete();
             return back()->with(['equipos_mensaje'=>'Equipo Eliminado Correctamente','equipos_clase'=>'alert alert-success']);
         } catch (\Exception $e) {
-            back()->with(['equipos_mensaje'=>'Error el equipo no se pudo borrar','equipos_clase'=>'alert alert-danger']);
+           return back()->with(['equipos_mensaje'=>'Error el equipo no se pudo borrar','equipos_clase'=>'alert alert-danger']);
         }
 
     }
-
-    public function verEquipo($id){
-        $equipo= Equipo::findOrFail($id);
-        return view('equipos.verEquipo',compact('equipo'));
+    public function verEquipo(Equipo $equipo){
+        $historico= \App\Models\Historico::where('equipos_id',$equipo->id)->orderBy('id', 'DESC')->get();
+        return view('equipos.verEquipo',compact('equipo'))->with('historial',$historico);
     }
     public function descargarQr($id){
         return response()->download('./qrcodes/qr_'.$id.'.png');

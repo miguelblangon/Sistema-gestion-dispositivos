@@ -11,9 +11,10 @@
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap">
 
         <!-- Styles -->
+        <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
         <link rel="stylesheet" href="<?php echo e(asset('css/app.css')); ?>">
-
         <!-- Scripts -->
+        <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
         <script src="<?php echo e(asset('js/app.js')); ?>" defer></script>
     </head>
     <body class="font-sans antialiased">
@@ -37,6 +38,9 @@
         <script src="<?php echo e(mix('js/app.js')); ?>"></script>
           <!-- Scripts -->
           <script src="<?php echo e(asset('js/funciones.js')); ?>" defer></script>
+          <script src="<?php echo e(asset('js/equipos.js')); ?>" defer></script>
+          <script src="<?php echo e(asset('js/clientes.js')); ?>" defer></script>
+          <script src="<?php echo e(asset('js/historico.js')); ?>" defer></script>
           <?php echo $__env->yieldContent('javaScript'); ?>
     </body>
 </html>

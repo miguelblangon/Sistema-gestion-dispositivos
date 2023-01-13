@@ -1,6 +1,6 @@
 <!-- Modal -->
 <div class="modal" tabindex="-1" id="mostrar">
-  <div class="modal-dialog">
+  <div class="modal-dialog modal-xl">
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title"></h5>
@@ -13,7 +13,7 @@
             <button type="button" class="bg-stone-500 hover:bg-stone-700 text-white font-bold py-2 px-3 rounded" data-bs-dismiss="modal">Cerrar</button>
             <input type="submit"  class="bg-sky-500 hover:bg-sky-700 text-white font-bold py-2 px-3 rounded" id="btn-enviar" value="">
         </div>
-</form>
+        </form>
     </div>
     </div>
   </div>

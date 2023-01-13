@@ -18,7 +18,7 @@
                     <div class="row mb-2">
                         <div class="col text-center">
                             <button  type="button" class="btn btn-outline-primary" id="usuarios">
-                                Usuarios
+                                Clientes
                             </button>
                         </div>
                     </div>
@@ -30,7 +30,7 @@
 
                                 </div>
                             <?php endif; ?>
-                            <h4> Tabla de usuarios </h4>
+                            <h4> Tabla de Clientes </h4>
                             <?php echo $__env->make('usuarios.tabla', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
                             <?php echo e($usuarios->links()); ?>
 
@@ -41,25 +41,6 @@
         </div>
     </div>
     <?php echo $__env->make('modal.modal', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
-    <?php $__env->startSection('javaScript'); ?>
-<script type="text/javascript">
-    $(function(){
-        $( "#usuarios" ).on( "click", function() {
-            $.get('/usuarios/create',function(data){
-                $('#mostrar').modal('show');
-                modal("<?php echo e(route('usuarios.store')); ?>",'POST','Crear Usuario',data,'Guardar Usuario');
-            });
-        });
-        $( "[name=editarUsuario]" ).on( "click", function() {
-            let id= $(this).val();
-            $.get('usuarios/'+id+'/edit' ,function(data){
-		        $('#mostrar').modal('show');
-                modal('usuarios/'+id,'POST','Actualizar Usuario',data,'Actualizar Usuario');
-            });
-        });
-})
-</script>
-<?php $__env->stopSection(); ?>
  <?php echo $__env->renderComponent(); ?>
 <?php endif; ?>
 <?php if (isset($__componentOriginal8e2ce59650f81721f93fef32250174d77c3531da)): ?>

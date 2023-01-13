@@ -24,7 +24,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'generated::ClxXqsJ8y9HSBVEV',
+            '_route' => 'generated::ftXsEgU0Ib0PXUBR',
           ),
           1 => NULL,
           2 => 
@@ -44,7 +44,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'generated::pztHDXC2rPbYaOQ7',
+            '_route' => 'generated::3lZJ2PWAjKgtY0Kw',
           ),
           1 => NULL,
           2 => 
@@ -64,7 +64,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'generated::Sbao3Z88nx2MOl6h',
+            '_route' => 'generated::SiEpVHIp3hHHx1Dz',
           ),
           1 => NULL,
           2 => 
@@ -210,6 +210,62 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
+      '/historico' => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'historico.index',
+          ),
+          1 => NULL,
+          2 => 
+          array (
+            'GET' => 0,
+            'HEAD' => 1,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => false,
+          6 => NULL,
+        ),
+        1 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'historico.store',
+          ),
+          1 => NULL,
+          2 => 
+          array (
+            'POST' => 0,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => false,
+          6 => NULL,
+        ),
+      ),
+      '/historico/create' => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'historico.create',
+          ),
+          1 => NULL,
+          2 => 
+          array (
+            'GET' => 0,
+            'HEAD' => 1,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => false,
+          6 => NULL,
+        ),
+      ),
       '/register' => 
       array (
         0 => 
@@ -233,7 +289,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'generated::Q06ZInVAoXJp2jva',
+            '_route' => 'generated::B5SFB5YFRnmKGW9M',
           ),
           1 => NULL,
           2 => 
@@ -269,7 +325,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'generated::QscomIlf9mOirR9t',
+            '_route' => 'generated::R8byU0udbujlOEKj',
           ),
           1 => NULL,
           2 => 
@@ -399,7 +455,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'generated::0i0svcQEc30dzmO9',
+            '_route' => 'generated::vaQgn7mBnPRsRDpG',
           ),
           1 => NULL,
           2 => 
@@ -434,7 +490,7 @@ app('router')->setCompiledRoutes(
     ),
     2 => 
     array (
-      0 => '{^(?|/usuarios/([^/]++)(?|(*:28)|/edit(*:40)|(*:47))|/equipos/(?|([^/]++)(?|(*:78)|/edit(*:90)|(*:97))|ver\\-equipo/([^/]++)(*:125)|descargarQr/([^/]++)(*:153))|/reset\\-password/([^/]++)(*:187)|/verify\\-email/([^/]++)/([^/]++)(*:227))/?$}sDu',
+      0 => '{^(?|/usuarios/([^/]++)(?|(*:28)|/edit(*:40)|(*:47))|/equipos/(?|([^/]++)(?|(*:78)|/edit(*:90)|(*:97))|ver\\-equipo/([^/]++)(*:125)|descargarQr/([^/]++)(*:153))|/historico/(?|crear\\-equipo/([^/]++)(*:198)|([^/]++)(?|(*:217)|/edit(*:230)|(*:238)))|/reset\\-password/([^/]++)(*:273)|/verify\\-email/([^/]++)/([^/]++)(*:313))/?$}sDu',
     ),
     3 => 
     array (
@@ -624,7 +680,7 @@ app('router')->setCompiledRoutes(
           ),
           1 => 
           array (
-            0 => 'id',
+            0 => 'equipo',
           ),
           2 => 
           array (
@@ -660,7 +716,118 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
-      187 => 
+      198 => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'historico.crear-equipo',
+          ),
+          1 => 
+          array (
+            0 => 'equipo',
+          ),
+          2 => 
+          array (
+            'GET' => 0,
+            'HEAD' => 1,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => true,
+          6 => NULL,
+        ),
+      ),
+      217 => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'historico.show',
+          ),
+          1 => 
+          array (
+            0 => 'historico',
+          ),
+          2 => 
+          array (
+            'GET' => 0,
+            'HEAD' => 1,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => true,
+          6 => NULL,
+        ),
+      ),
+      230 => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'historico.edit',
+          ),
+          1 => 
+          array (
+            0 => 'historico',
+          ),
+          2 => 
+          array (
+            'GET' => 0,
+            'HEAD' => 1,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => false,
+          6 => NULL,
+        ),
+      ),
+      238 => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'historico.update',
+          ),
+          1 => 
+          array (
+            0 => 'historico',
+          ),
+          2 => 
+          array (
+            'PUT' => 0,
+            'PATCH' => 1,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => true,
+          6 => NULL,
+        ),
+        1 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'historico.destroy',
+          ),
+          1 => 
+          array (
+            0 => 'historico',
+          ),
+          2 => 
+          array (
+            'DELETE' => 0,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => true,
+          6 => NULL,
+        ),
+      ),
+      273 => 
       array (
         0 => 
         array (
@@ -683,7 +850,7 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
-      227 => 
+      313 => 
       array (
         0 => 
         array (
@@ -722,7 +889,7 @@ app('router')->setCompiledRoutes(
   ),
   'attributes' => 
   array (
-    'generated::ClxXqsJ8y9HSBVEV' => 
+    'generated::ftXsEgU0Ib0PXUBR' => 
     array (
       'methods' => 
       array (
@@ -743,7 +910,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 'web',
         ),
-        'as' => 'generated::ClxXqsJ8y9HSBVEV',
+        'as' => 'generated::ftXsEgU0Ib0PXUBR',
       ),
       'fallback' => false,
       'defaults' => 
@@ -759,7 +926,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'generated::pztHDXC2rPbYaOQ7' => 
+    'generated::3lZJ2PWAjKgtY0Kw' => 
     array (
       'methods' => 
       array (
@@ -776,13 +943,13 @@ app('router')->setCompiledRoutes(
         ),
         'uses' => 'O:47:"Laravel\\SerializableClosure\\SerializableClosure":1:{s:12:"serializable";O:46:"Laravel\\SerializableClosure\\Serializers\\Signed":2:{s:12:"serializable";s:297:"O:46:"Laravel\\SerializableClosure\\Serializers\\Native":5:{s:3:"use";a:0:{}s:8:"function";s:79:"function (\\Illuminate\\Http\\Request $request) {
     return $request->user();
-}";s:5:"scope";s:37:"Illuminate\\Routing\\RouteFileRegistrar";s:4:"this";N;s:4:"self";s:32:"00000000000004420000000000000000";}";s:4:"hash";s:44:"sBWMNWNByK/Tr6z105BpXIWvsDuxzayi67+c58fsUWo=";}}',
+}";s:5:"scope";s:37:"Illuminate\\Routing\\RouteFileRegistrar";s:4:"this";N;s:4:"self";s:32:"000000000000046e0000000000000000";}";s:4:"hash";s:44:"4AQPUXsytspkndwlXau1LuG9aPUmrf0hRTmL7OXH17k=";}}',
         'namespace' => NULL,
         'prefix' => 'api',
         'where' => 
         array (
         ),
-        'as' => 'generated::pztHDXC2rPbYaOQ7',
+        'as' => 'generated::3lZJ2PWAjKgtY0Kw',
       ),
       'fallback' => false,
       'defaults' => 
@@ -798,7 +965,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'generated::Sbao3Z88nx2MOl6h' => 
+    'generated::SiEpVHIp3hHHx1Dz' => 
     array (
       'methods' => 
       array (
@@ -812,13 +979,13 @@ app('router')->setCompiledRoutes(
         array (
           0 => 'web',
         ),
-        'uses' => 'O:47:"Laravel\\SerializableClosure\\SerializableClosure":1:{s:12:"serializable";O:46:"Laravel\\SerializableClosure\\Serializers\\Signed":2:{s:12:"serializable";s:256:"O:46:"Laravel\\SerializableClosure\\Serializers\\Native":5:{s:3:"use";a:0:{}s:8:"function";s:38:"function () {return \\view(\'welcome\');}";s:5:"scope";s:37:"Illuminate\\Routing\\RouteFileRegistrar";s:4:"this";N;s:4:"self";s:32:"00000000000004440000000000000000";}";s:4:"hash";s:44:"2f533D5awSxQHhhtF92Ri+yYBKXC4mJIpEHQtGhD2T0=";}}',
+        'uses' => 'O:47:"Laravel\\SerializableClosure\\SerializableClosure":1:{s:12:"serializable";O:46:"Laravel\\SerializableClosure\\Serializers\\Signed":2:{s:12:"serializable";s:256:"O:46:"Laravel\\SerializableClosure\\Serializers\\Native":5:{s:3:"use";a:0:{}s:8:"function";s:38:"function () {return \\view(\'welcome\');}";s:5:"scope";s:37:"Illuminate\\Routing\\RouteFileRegistrar";s:4:"this";N;s:4:"self";s:32:"00000000000004700000000000000000";}";s:4:"hash";s:44:"9usjCfi2ZMQPzggG/i5aA8W8zYdjZ6gr5tCVzV81Kmo=";}}',
         'namespace' => NULL,
         'prefix' => '',
         'where' => 
         array (
         ),
-        'as' => 'generated::Sbao3Z88nx2MOl6h',
+        'as' => 'generated::SiEpVHIp3hHHx1Dz',
       ),
       'fallback' => false,
       'defaults' => 
@@ -849,10 +1016,10 @@ app('router')->setCompiledRoutes(
           0 => 'web',
           1 => 'auth',
         ),
-        'uses' => 'O:47:"Laravel\\SerializableClosure\\SerializableClosure":1:{s:12:"serializable";O:46:"Laravel\\SerializableClosure\\Serializers\\Signed":2:{s:12:"serializable";s:417:"O:46:"Laravel\\SerializableClosure\\Serializers\\Native":5:{s:3:"use";a:0:{}s:8:"function";s:198:"function () {return \\view(\'dashboard\')->with([
-            \'usuarios\'=>\\App\\Models\\Usuario::latest()->take(5)->get(),
-            \'equipos\'=>\\App\\Models\\Equipo::latest()->take(5)->get()
-        ]);}";s:5:"scope";s:37:"Illuminate\\Routing\\RouteFileRegistrar";s:4:"this";N;s:4:"self";s:32:"00000000000004460000000000000000";}";s:4:"hash";s:44:"o7ocFw1KR2VYnwGpSrt5u8DsEHiMoOwPgUXzBsExko0=";}}',
+        'uses' => 'O:47:"Laravel\\SerializableClosure\\SerializableClosure":1:{s:12:"serializable";O:46:"Laravel\\SerializableClosure\\Serializers\\Signed":2:{s:12:"serializable";s:443:"O:46:"Laravel\\SerializableClosure\\Serializers\\Native":5:{s:3:"use";a:0:{}s:8:"function";s:224:"function () {return \\view(\'dashboard\')->with([
+            \'usuarios\'=>\\App\\Models\\Usuario::orderBy(\'id\', \'DESC\')->take(5)->get(),
+            \'equipos\'=>\\App\\Models\\Equipo::orderBy(\'id\', \'DESC\')->take(5)->get()
+        ]);}";s:5:"scope";s:37:"Illuminate\\Routing\\RouteFileRegistrar";s:4:"this";N;s:4:"self";s:32:"00000000000004720000000000000000";}";s:4:"hash";s:44:"y8Uoq6sAzC7Mt3ttQeo99C5GEYMflTGHYOuGXfetScI=";}}',
         'namespace' => NULL,
         'prefix' => '',
         'where' => 
@@ -1409,7 +1576,7 @@ app('router')->setCompiledRoutes(
         0 => 'GET',
         1 => 'HEAD',
       ),
-      'uri' => 'equipos/ver-equipo/{id}',
+      'uri' => 'equipos/ver-equipo/{equipo}',
       'action' => 
       array (
         'middleware' => 
@@ -1476,6 +1643,308 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
+    'historico.crear-equipo' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'GET',
+        1 => 'HEAD',
+      ),
+      'uri' => 'historico/crear-equipo/{equipo}',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+          1 => 'auth',
+        ),
+        'uses' => 'App\\Http\\Controllers\\HistoricoController@createDos',
+        'controller' => 'App\\Http\\Controllers\\HistoricoController@createDos',
+        'namespace' => NULL,
+        'prefix' => '',
+        'where' => 
+        array (
+        ),
+        'as' => 'historico.crear-equipo',
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'historico.index' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'GET',
+        1 => 'HEAD',
+      ),
+      'uri' => 'historico',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+          1 => 'auth',
+        ),
+        'as' => 'historico.index',
+        'uses' => 'App\\Http\\Controllers\\HistoricoController@index',
+        'controller' => 'App\\Http\\Controllers\\HistoricoController@index',
+        'namespace' => NULL,
+        'prefix' => '',
+        'where' => 
+        array (
+        ),
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'historico.create' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'GET',
+        1 => 'HEAD',
+      ),
+      'uri' => 'historico/create',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+          1 => 'auth',
+        ),
+        'as' => 'historico.create',
+        'uses' => 'App\\Http\\Controllers\\HistoricoController@create',
+        'controller' => 'App\\Http\\Controllers\\HistoricoController@create',
+        'namespace' => NULL,
+        'prefix' => '',
+        'where' => 
+        array (
+        ),
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'historico.store' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'POST',
+      ),
+      'uri' => 'historico',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+          1 => 'auth',
+        ),
+        'as' => 'historico.store',
+        'uses' => 'App\\Http\\Controllers\\HistoricoController@store',
+        'controller' => 'App\\Http\\Controllers\\HistoricoController@store',
+        'namespace' => NULL,
+        'prefix' => '',
+        'where' => 
+        array (
+        ),
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'historico.show' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'GET',
+        1 => 'HEAD',
+      ),
+      'uri' => 'historico/{historico}',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+          1 => 'auth',
+        ),
+        'as' => 'historico.show',
+        'uses' => 'App\\Http\\Controllers\\HistoricoController@show',
+        'controller' => 'App\\Http\\Controllers\\HistoricoController@show',
+        'namespace' => NULL,
+        'prefix' => '',
+        'where' => 
+        array (
+        ),
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'historico.edit' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'GET',
+        1 => 'HEAD',
+      ),
+      'uri' => 'historico/{historico}/edit',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+          1 => 'auth',
+        ),
+        'as' => 'historico.edit',
+        'uses' => 'App\\Http\\Controllers\\HistoricoController@edit',
+        'controller' => 'App\\Http\\Controllers\\HistoricoController@edit',
+        'namespace' => NULL,
+        'prefix' => '',
+        'where' => 
+        array (
+        ),
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'historico.update' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'PUT',
+        1 => 'PATCH',
+      ),
+      'uri' => 'historico/{historico}',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+          1 => 'auth',
+        ),
+        'as' => 'historico.update',
+        'uses' => 'App\\Http\\Controllers\\HistoricoController@update',
+        'controller' => 'App\\Http\\Controllers\\HistoricoController@update',
+        'namespace' => NULL,
+        'prefix' => '',
+        'where' => 
+        array (
+        ),
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'historico.destroy' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'DELETE',
+      ),
+      'uri' => 'historico/{historico}',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+          1 => 'auth',
+        ),
+        'as' => 'historico.destroy',
+        'uses' => 'App\\Http\\Controllers\\HistoricoController@destroy',
+        'controller' => 'App\\Http\\Controllers\\HistoricoController@destroy',
+        'namespace' => NULL,
+        'prefix' => '',
+        'where' => 
+        array (
+        ),
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
     'register' => 
     array (
       'methods' => 
@@ -1514,7 +1983,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'generated::Q06ZInVAoXJp2jva' => 
+    'generated::B5SFB5YFRnmKGW9M' => 
     array (
       'methods' => 
       array (
@@ -1535,7 +2004,7 @@ app('router')->setCompiledRoutes(
         'where' => 
         array (
         ),
-        'as' => 'generated::Q06ZInVAoXJp2jva',
+        'as' => 'generated::B5SFB5YFRnmKGW9M',
       ),
       'fallback' => false,
       'defaults' => 
@@ -1589,7 +2058,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'generated::QscomIlf9mOirR9t' => 
+    'generated::R8byU0udbujlOEKj' => 
     array (
       'methods' => 
       array (
@@ -1610,7 +2079,7 @@ app('router')->setCompiledRoutes(
         'where' => 
         array (
         ),
-        'as' => 'generated::QscomIlf9mOirR9t',
+        'as' => 'generated::R8byU0udbujlOEKj',
       ),
       'fallback' => false,
       'defaults' => 
@@ -1930,7 +2399,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'generated::0i0svcQEc30dzmO9' => 
+    'generated::vaQgn7mBnPRsRDpG' => 
     array (
       'methods' => 
       array (
@@ -1951,7 +2420,7 @@ app('router')->setCompiledRoutes(
         'where' => 
         array (
         ),
-        'as' => 'generated::0i0svcQEc30dzmO9',
+        'as' => 'generated::vaQgn7mBnPRsRDpG',
       ),
       'fallback' => false,
       'defaults' => 
