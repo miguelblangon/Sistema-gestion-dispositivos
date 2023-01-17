@@ -14,10 +14,19 @@ class EquipoController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request  $request)
     {
-        $equipos= \App\Models\Equipo::orderBy('id', 'DESC')->simplePaginate(10);
-        return view('equipos.index', compact('equipos') );
+        $equipos= \App\Models\Equipo::orderBy('id','DESC')->simplePaginate(10);
+
+        $equipos= \App\Models\Equipo::when($request->nombreEquipo , function ($query, $nombreEquipo) {
+            $query->where('nombreEquipo', $nombreEquipo);
+        })->when($request->placaBase , function ($query,$placaBase){
+            $query->where('placaBase', $placaBase);
+        })->when($request->usuarios_id , function ($query,$usuarios_id){
+            $query->where('usuarios_id', $usuarios_id);
+        })->simplePaginate(10)->withQueryString();
+
+        return view('equipos.index', compact('equipos') )->with('clientes',\App\Models\Usuario::all());
     }
 
     /**

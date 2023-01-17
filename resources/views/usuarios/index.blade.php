@@ -23,7 +23,14 @@
                                     {{ session('usuarios_mensaje') }}
                                 </div>
                             @endif
-                            <h4> Tabla de Clientes </h4>
+                            @include('buscador.buscador',['nombre'=>'buscador' ,'action'=> "usuarios",'max'=>2,
+                                                            //Parametros del input
+                                                                'name'=>['nombre','apellidos'],'nomPara'=>['Nombre','Apellidos'], 'colInput'=>'col-5',
+                                                                'tipo'=>['text','text'],
+                                                            //Parametros del boton
+                                                                'btnClas'=>'bg-sky-500 hover:bg-sky-700 text-white font-bold py-2 px-3 rounded text-capitalize',
+                                                                'btnName'=>'enviar','boton'=>'buscar','colbutton'=>'col-2'
+                                                        ])
                             @include('usuarios.tabla')
                             {{ $usuarios->links() }}
                         </div>

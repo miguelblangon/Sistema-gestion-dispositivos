@@ -4,17 +4,13 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="csrf-token" content="<?php echo e(csrf_token()); ?>">
-
         <title><?php echo e(config('app.name', 'Laravel')); ?></title>
-
         <!-- Fonts -->
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap">
-
         <!-- Styles -->
-        <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
         <link rel="stylesheet" href="<?php echo e(asset('css/app.css')); ?>">
+        <link rel="stylesheet" href="<?php echo e(asset('css/estilos.css')); ?>">
         <!-- Scripts -->
-        <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
         <script src="<?php echo e(asset('js/app.js')); ?>" defer></script>
     </head>
     <body class="font-sans antialiased">

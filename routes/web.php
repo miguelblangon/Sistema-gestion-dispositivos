@@ -13,7 +13,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {return view('welcome');});
+//Route::get('/', function () {return view('welcome');});
 Route::get('/dashboard', function () {return view('dashboard')->with([
             'usuarios'=>\App\Models\Usuario::orderBy('id', 'DESC')->take(5)->get(),
             'equipos'=>\App\Models\Equipo::orderBy('id', 'DESC')->take(5)->get()

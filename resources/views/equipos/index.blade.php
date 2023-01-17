@@ -22,6 +22,17 @@
                                     {{ session('equipos_mensaje') }}
                                 </div>
                             @endif
+                            @include('buscador.buscador',['nombre'=>'buscador' ,'action'=> "equipos",'max'=>3,
+                                                            //Parametros del input
+                                                                'name'=>['nombreEquipo','placaBase','usuarios_id'],
+                                                                'nomPara'=>['Nombre del Equipo','Placa Base','Seleciona un Cliente'],
+                                                                'colInput'=>'col-4',
+                                                                'tipo'=>['text','text','select'],
+                                                                'selectIfo'=>$clientes,'selectId'=>'id','selectNombre'=>'nombre',
+                                                            //Parametros del boton
+                                                                'btnClas'=>'bg-sky-500 hover:bg-sky-700 text-white font-bold py-2 px-3 rounded text-capitalize',
+                                                                'btnName'=>'enviar','boton'=>'buscar','colbutton'=>'col-2'
+                                                        ])
                             @include('equipos.tabla')
                             {{ $equipos->links() }}
                         </div>

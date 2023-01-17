@@ -30,7 +30,17 @@
 
                                 </div>
                             <?php endif; ?>
-                            <h4> Tabla de Incidencias </h4>
+                            <?php echo $__env->make('buscador.buscador',['nombre'=>'buscador' ,'action'=> "historico",'max'=>3,
+                            //Parametros del input
+                                'name'=>['usuarios_id','procedimiento','fecha'],
+                                'nomPara'=>['Cliente','Procedimiento','Fecha'],
+                                'colInput'=>'col-4',
+                                'tipo'=>['select','text','date'],
+                                'selectIfo'=>$clientes,'selectId'=>'id','selectNombre'=>'nombre',
+                            //Parametros del boton
+                                'btnClas'=>'bg-sky-500 hover:bg-sky-700 text-white font-bold py-2 px-3 rounded text-capitalize',
+                                'btnName'=>'enviar','boton'=>'buscar','colbutton'=>'col-2'
+                            ], \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
                             <?php echo $__env->make('historico.tabla', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
                             <?php echo e($historico->links()); ?>
 

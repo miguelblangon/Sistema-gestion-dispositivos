@@ -3,12 +3,50 @@
 namespace App\Http\Controllers;
 use App\Models\Historico;
 use Illuminate\Http\Request;
+use Carbon\Carbon;
 
 class HistoricoController extends Controller
 {
     public function index(Request $request){
         $historico= Historico::orderBy('id', 'DESC')->simplePaginate(10);
-        return view('historico.index',compact('historico'));
+
+
+        $usuarios=$request->usuarios_id;
+        $fecha=null;
+        if ($request->fecha!=null) {
+            $fecha = Carbon::parse($request->fecha)->format('Y-m-d');
+        }
+
+
+        if ($usuarios!=null) {
+            $historico=Historico::whereHas("equipo.usuario", function ($query) use ($usuarios) {$query->where('id', $usuarios);
+            })->when($request->procedimiento , function ($query,$procedimiento){
+                $query->where('procedimiento', $procedimiento);
+            })->when($fecha , function ($query,$fecha){
+                $query->whereDate('created_at', $fecha);
+            })->simplePaginate(10)->withQueryString();
+        }else{
+            $historico= Historico::when($request->procedimiento , function ($query,$procedimiento){
+                $query->where('procedimiento', $procedimiento);
+            })->when($fecha , function ($query,$fecha){
+                $query->whereDate('created_at', $fecha);
+            })->simplePaginate(10)->withQueryString();
+
+        }
+
+
+
+
+
+
+        //dd($historico);
+        /*
+        if ($request->usuarios_id!=null) {
+            Historico::whereHas('equipo', function($q) {$q->where('usuario.id');});
+        }
+        */
+        $clientes=\App\Models\Usuario::all();
+        return view('historico.index',compact('historico'))->with('clientes',$clientes);
     }
 
 
