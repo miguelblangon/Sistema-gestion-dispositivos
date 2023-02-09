@@ -85,7 +85,7 @@
             
         </div>
         <div class="col-6">
-            <label for="exampleInputPassword1" class="form-label"> <?php echo e(ucwords('usuario')); ?> </label>
+            <label for="exampleInputPassword1" class="form-label"> <?php echo e(ucwords('cliente')); ?> </label>
             <select  class="form-control" name="usuarios_id" required>
                 <option value=""> Selecciona ...</option>
                 <?php $__currentLoopData = $usuarios; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $key => $val): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>

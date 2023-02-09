@@ -56,8 +56,14 @@
 
                 <select class="form-control" name="tipo" required>
                         <option value=""> Selecciona ...</option>
-                        <option value="portatil" {{ ( isset($equipo->tipo) == "portatil" ? "selected":"") }}> {{ ucwords('portatil') }} </option>
-                        <option value="pc" {{ ( isset($equipo->tipo) == "pc"  ? "selected":"") }}>{{ ucwords('pc') }}</option>
+                        <option value="portatil"
+                        @isset($equipo->tipo)
+                            {{ ($equipo->tipo == "portatil" ? "selected":"" ) }}
+                        @endisset > {{ ucwords('portatil') }} </option>
+
+                        <option value="pc" @isset($equipo->tipo)
+                            {{ ($equipo->tipo == "pc" ? "selected":"" ) }}
+                        @endisset >{{ ucwords('pc') }}</option>
                 </select>
             </div>
         </div>

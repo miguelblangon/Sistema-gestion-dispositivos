@@ -83,7 +83,7 @@
             {{-- fin mensajes de validacion --}}
         </div>
         <div class="col-6">
-            <label for="exampleInputPassword1" class="form-label"> {{ ucwords('usuario') }} </label>
+            <label for="exampleInputPassword1" class="form-label"> {{ ucwords('cliente') }} </label>
             <select  class="form-control" name="usuarios_id" required>
                 <option value=""> Selecciona ...</option>
                 @foreach ($usuarios as $key => $val)

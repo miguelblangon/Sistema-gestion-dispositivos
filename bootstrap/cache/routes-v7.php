@@ -24,7 +24,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'generated::eIKWweFU6aqrtJYg',
+            '_route' => 'generated::8YaDyDc7A9lAwkDe',
           ),
           1 => NULL,
           2 => 
@@ -44,7 +44,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'generated::Qgu8YDYOc3OaxTlq',
+            '_route' => 'generated::AcBA6MmZmGbwCste',
           ),
           1 => NULL,
           2 => 
@@ -269,7 +269,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'generated::ItRmB7GIhTBNm4zP',
+            '_route' => 'generated::CZTx3dnHVYmx8AsM',
           ),
           1 => NULL,
           2 => 
@@ -656,7 +656,7 @@ app('router')->setCompiledRoutes(
   ),
   'attributes' => 
   array (
-    'generated::eIKWweFU6aqrtJYg' => 
+    'generated::8YaDyDc7A9lAwkDe' => 
     array (
       'methods' => 
       array (
@@ -677,7 +677,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 'web',
         ),
-        'as' => 'generated::eIKWweFU6aqrtJYg',
+        'as' => 'generated::8YaDyDc7A9lAwkDe',
       ),
       'fallback' => false,
       'defaults' => 
@@ -693,7 +693,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'generated::Qgu8YDYOc3OaxTlq' => 
+    'generated::AcBA6MmZmGbwCste' => 
     array (
       'methods' => 
       array (
@@ -716,7 +716,7 @@ app('router')->setCompiledRoutes(
         'where' => 
         array (
         ),
-        'as' => 'generated::Qgu8YDYOc3OaxTlq',
+        'as' => 'generated::AcBA6MmZmGbwCste',
       ),
       'fallback' => false,
       'defaults' => 
@@ -1313,6 +1313,7 @@ app('router')->setCompiledRoutes(
         'middleware' => 
         array (
           0 => 'web',
+          1 => 'auth',
         ),
         'uses' => 'App\\Http\\Controllers\\EquipoController@verEquipo',
         'controller' => 'App\\Http\\Controllers\\EquipoController@verEquipo',
@@ -1714,7 +1715,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'generated::ItRmB7GIhTBNm4zP' => 
+    'generated::CZTx3dnHVYmx8AsM' => 
     array (
       'methods' => 
       array (
@@ -1735,7 +1736,7 @@ app('router')->setCompiledRoutes(
         'where' => 
         array (
         ),
-        'as' => 'generated::ItRmB7GIhTBNm4zP',
+        'as' => 'generated::CZTx3dnHVYmx8AsM',
       ),
       'fallback' => false,
       'defaults' => 

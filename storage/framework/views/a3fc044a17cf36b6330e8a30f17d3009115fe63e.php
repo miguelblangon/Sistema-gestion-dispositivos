@@ -15,7 +15,7 @@
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 bg-white border-b border-gray-200">
-                    <div class="d-flex justify-content-evenly">
+                    <div class="row">
                         <div class="col-auto text-center">
                             <?php if(session('usuarios_mensaje')): ?>
                                 <div class="<?php echo e(session('usuarios_clase')); ?>">
@@ -32,6 +32,7 @@
 
                             <?php echo $__env->make('usuarios.tabla', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
                         </div>
+                        <div class="col"></div>
                         <div class="col-auto text-center">
                             <?php if(session('equipos_mensaje') ): ?>
                                 <div class="<?php echo e(session('equipos_clase')); ?>">

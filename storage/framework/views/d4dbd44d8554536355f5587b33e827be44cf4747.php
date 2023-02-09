@@ -61,8 +61,16 @@
 
                 <select class="form-control" name="tipo" required>
                         <option value=""> Selecciona ...</option>
-                        <option value="portatil" <?php echo e(( isset($equipo->tipo) == "portatil" ? "selected":"")); ?>> <?php echo e(ucwords('portatil')); ?> </option>
-                        <option value="pc" <?php echo e(( isset($equipo->tipo) == "pc"  ? "selected":"")); ?>><?php echo e(ucwords('pc')); ?></option>
+                        <option value="portatil"
+                        <?php if(isset($equipo->tipo)): ?>
+                            <?php echo e(($equipo->tipo == "portatil" ? "selected":"" )); ?>
+
+                        <?php endif; ?> > <?php echo e(ucwords('portatil')); ?> </option>
+
+                        <option value="pc" <?php if(isset($equipo->tipo)): ?>
+                            <?php echo e(($equipo->tipo == "pc" ? "selected":"" )); ?>
+
+                        <?php endif; ?> ><?php echo e(ucwords('pc')); ?></option>
                 </select>
             </div>
         </div>

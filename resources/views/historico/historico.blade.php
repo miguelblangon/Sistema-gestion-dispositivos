@@ -4,7 +4,7 @@
     <div class="card mt-2">
         <div class="card-body">
           <h5 class="card-title fw-bolder text-capitalize d-flex justify-content-evenly"><span>{{ $histo->created_at->format('d-m-Y') }}</span> <span>{{ $histo->procedimiento }}</span>  <span>{{ $histo->pieza }}</span></h5>
-          <p class="card-text lh-lg"> {{ $histo->descripcion}}</p>
+          <p class="card-text lh-lg"> {!! str_replace(array("\r\n", "\n\r", "\r", "\n"), "<br />", $histo->descripcion) !!}</p>
         </div>
       </div>
     @endforeach

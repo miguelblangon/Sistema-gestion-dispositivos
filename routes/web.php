@@ -22,7 +22,7 @@ Route::get('/dashboard', function () {return view('dashboard')->with([
 Route::resource('usuarios', \App\Http\Controllers\UsuarioController::class)->middleware(['auth']);
 //Estos son los equipos usados por los usuarios
 Route::resource('equipos', \App\Http\Controllers\EquipoController::class)->middleware(['auth']);
-Route::get('equipos/ver-equipo/{equipo}', [\App\Http\Controllers\EquipoController::class, 'verEquipo'])->name('ver-equipo');
+Route::get('equipos/ver-equipo/{equipo}', [\App\Http\Controllers\EquipoController::class, 'verEquipo'])->middleware(['auth'])->name('ver-equipo');
 Route::get('equipos/descargarQr/{id}', [\App\Http\Controllers\EquipoController::class, 'descargarQr'])->name('descargar-qr');
 
 //historico de las incidencias

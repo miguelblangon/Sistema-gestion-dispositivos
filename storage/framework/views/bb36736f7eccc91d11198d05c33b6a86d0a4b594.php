@@ -4,7 +4,7 @@
     <div class="card mt-2">
         <div class="card-body">
           <h5 class="card-title fw-bolder text-capitalize d-flex justify-content-evenly"><span><?php echo e($histo->created_at->format('d-m-Y')); ?></span> <span><?php echo e($histo->procedimiento); ?></span>  <span><?php echo e($histo->pieza); ?></span></h5>
-          <p class="card-text lh-lg"> <?php echo e($histo->descripcion); ?></p>
+          <p class="card-text lh-lg"> <?php echo str_replace(array("\r\n", "\n\r", "\r", "\n"), "<br />", $histo->descripcion); ?></p>
         </div>
       </div>
     <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
