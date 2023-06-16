@@ -28,6 +28,30 @@
             {{-- fin mensajes de validacion --}}
         </div>
         <div class="col-6">
+            <label for="exampleInputPassword1" class="form-label"> {{ ucwords('ram') }} </label>
+            <input type="number" class="form-control"  name="ram"
+            @isset($envioEspecial)
+                value="{{ $equipo->ram  }}"
+            @endisset
+            required>
+            {{-- mensajes de validacion --}}
+            <div class="valid-feedback">Correcto!</div>
+            <div class="invalid-feedback">Introduce información valida</div>
+            {{-- fin mensajes de validacion --}}
+        </div>
+        <div class="col-6">
+            <label for="exampleInputPassword1" class="form-label"> {{ ucwords('tipo ram') }} </label>
+            <input type="text" class="form-control"  name="type_ram"
+            @isset($envioEspecial)
+                value="{{ $equipo->type_ram  }}"
+            @endisset
+            required>
+            {{-- mensajes de validacion --}}
+            <div class="valid-feedback">Correcto!</div>
+            <div class="invalid-feedback">Introduce información valida</div>
+            {{-- fin mensajes de validacion --}}
+        </div>
+        <div class="col-6">
             <label for="exampleInputPassword1" class="form-label"> {{ ucwords('placa base') }} </label>
             <input type="text" class="form-control"  name="placaBase"
             @isset($envioEspecial)

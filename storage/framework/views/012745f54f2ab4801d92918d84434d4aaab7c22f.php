@@ -28,6 +28,30 @@
             
         </div>
         <div class="col-6">
+            <label for="exampleInputPassword1" class="form-label"> <?php echo e(ucwords('ram')); ?> </label>
+            <input type="number" class="form-control"  name="ram"
+            <?php if(isset($envioEspecial)): ?>
+                value="<?php echo e($equipo->ram); ?>"
+            <?php endif; ?>
+            required>
+            
+            <div class="valid-feedback">Correcto!</div>
+            <div class="invalid-feedback">Introduce información valida</div>
+            
+        </div>
+        <div class="col-6">
+            <label for="exampleInputPassword1" class="form-label"> <?php echo e(ucwords('tipo ram')); ?> </label>
+            <input type="text" class="form-control"  name="type_ram"
+            <?php if(isset($envioEspecial)): ?>
+                value="<?php echo e($equipo->type_ram); ?>"
+            <?php endif; ?>
+            required>
+            
+            <div class="valid-feedback">Correcto!</div>
+            <div class="invalid-feedback">Introduce información valida</div>
+            
+        </div>
+        <div class="col-6">
             <label for="exampleInputPassword1" class="form-label"> <?php echo e(ucwords('placa base')); ?> </label>
             <input type="text" class="form-control"  name="placaBase"
             <?php if(isset($envioEspecial)): ?>

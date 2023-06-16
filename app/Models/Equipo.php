@@ -12,6 +12,8 @@ class Equipo extends Model
     protected $fillable = [
         'nombreEquipo',
         'procesador',
+        'ram',
+        'type_ram',
         'placaBase',
         'discoDuro',
         'sistemaOperativo',
