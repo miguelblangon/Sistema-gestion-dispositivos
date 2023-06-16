@@ -17,3 +17,6 @@ yarn-error.log
 /.vscode
 node_modules
 bootstrap
+/bootstrap/cache
+/bootstrap/cache/*.php
+
