@@ -19,4 +19,4 @@ node_modules
 bootstrap
 /bootstrap/cache
 /bootstrap/cache/*.php
-
+access.log
