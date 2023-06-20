@@ -16,7 +16,6 @@ yarn-error.log
 /.idea
 /.vscode
 node_modules
-bootstrap
-/bootstrap/cache
-/bootstrap/cache/*.php
+
 access.log
+bootstrap/cache/routes-v7.php
