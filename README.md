@@ -22,9 +22,10 @@ _Descargarse el proyecto y ejecutar los comandos siguientes_
 
 ```
 1 composer install
-2 cp .env.example .env
-3 php artisan key:generate
-4 php artisan migrate
+2 npm install
+3 cp .env.example .env
+4 php artisan key:generate
+5 php artisan migrate
 ```
 
 _Si no tenemos un servidor WAMP o XAMP o LAMP_
